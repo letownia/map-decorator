@@ -2,14 +2,19 @@ package com.mapdecorator;
 
 /**
  * Hello world!
- *
  */
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import java.lang.invoke.MethodHandles;
 
 /**
  * @SpringBootApplication is a convenience annotation that adds *more or less* of the following:
- * 	  @Configuration tags the class as a source of bean definitions for the application context.
+ *    @Configuration tags the class as a source of bean definitions for the application context.
  *    @EnableAutoConfiguration tells Spring Boot to start adding beans based on classpath settings, other beans,
  *    	and various property settings.
  *    Normally you would add @EnableWebMvc for a Spring MVC app, but Spring Boot adds it automatically when it sees
@@ -20,11 +25,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 
 @SpringBootApplication
-public class MapDecoratorApplication
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-        SpringApplication.run(MapDecoratorApplication.class, args);
-    }
+public class MapDecoratorApplication {
+  private static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+
+  public static void main(String[] args) {
+    logger.info("Hello world!");
+    ConfigurableApplicationContext context = SpringApplication.run(MapDecoratorApplication.class, args);
+    logger.info("Context created :" + context);
+  }
 }

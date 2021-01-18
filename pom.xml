@@ -6,7 +6,7 @@
 
     <groupId>com.mapdecorator</groupId>
     <artifactId>map-decorator-parent</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.parent-pom</version>
 
     <packaging>pom</packaging>
 
@@ -15,6 +15,7 @@
 <!--        <groupId>org.springframework.boot</groupId>-->
 <!--        <artifactId>spring-boot-starter-parent</artifactId>-->
 <!--        <map.decorator.parent-version>1.0.2</map.decorator.parent-version>-->
+        <map.decorator-version>1.0.6</map.decorator-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11</java.version>
         <maven.compiler.release>${java.version}</maven.compiler.release>
@@ -23,6 +24,7 @@
 
     <modules>
         <module>controller</module>
+        <module>map-feature-service</module>
     </modules>
 
    <build>
